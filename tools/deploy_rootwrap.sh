@@ -32,10 +32,12 @@ neutron_path=$1
 target_etc_path=$2
 target_bin_path=$3
 
+# 配置
 src_conf_path=${neutron_path}/etc
 src_conf=${src_conf_path}/rootwrap.conf
 src_rootwrap_path=${src_conf_path}/neutron/rootwrap.d
 
+# 目标
 dst_conf_path=${target_etc_path}/neutron
 dst_conf=${dst_conf_path}/rootwrap.conf
 dst_rootwrap_path=${dst_conf_path}/rootwrap.d

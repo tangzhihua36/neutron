@@ -53,6 +53,7 @@ oslo_messaging.set_transport_defaults(control_exchange='neutron')
 
 
 def set_db_defaults():
+    # 指定数据库连接池配置
     # Update the default QueuePool parameters. These can be tweaked by the
     # conf variables - max_pool_size, max_overflow and pool_timeout
     db_options.set_defaults(

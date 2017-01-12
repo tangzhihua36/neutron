@@ -19,7 +19,7 @@
 #    under the License.
 
 """
-Installation script for Neutron's development virtualenv
+Installation script for Neutron's development virtualenv 虚拟环境
 """
 from __future__ import print_function
 

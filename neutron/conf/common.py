@@ -21,7 +21,7 @@ from neutron._i18n import _
 from neutron.common import constants
 from neutron.common import utils
 
-
+# 核心配置选项
 core_opts = [
     cfg.StrOpt('bind_host', default='0.0.0.0',
                help=_("The host IP to bind to")),
@@ -52,8 +52,8 @@ core_opts = [
                       "option is now obsolete and so is deprecated to be "
                       "removed in the Ocata release.")),
     cfg.BoolOpt('allow_bulk', default=True,
-                help=_("Allow the usage of the bulk API")),
-    cfg.BoolOpt('allow_pagination', default=True,
+                help=_("Allow the usage of the bulk API")),  # bulk 块
+    cfg.BoolOpt('allow_pagination', default=True,  # pagination 页码
                 deprecated_for_removal=True,
                 help=_("Allow the usage of the pagination. This option has "
                        "been deprecated and will now be enabled "
@@ -95,12 +95,14 @@ core_opts = [
                        "given a CIDR via the Prefix Delegation mechanism. "
                        "Note that enabling PD will override the behavior of "
                        "the default IPv6 subnetpool.")),
+
     cfg.IntOpt('dhcp_lease_duration', default=86400,
                help=_("DHCP lease duration (in seconds). Use -1 to tell "
                       "dnsmasq to use infinite lease times.")),
     cfg.StrOpt('dns_domain',
                default='openstacklocal',
                help=_('Domain to use for building the hostnames')),
+
     cfg.StrOpt('external_dns_driver',
                help=_('Driver for external DNS integration.')),
     cfg.BoolOpt('dhcp_agent_notification', default=True,
@@ -141,7 +143,7 @@ core_opts = [
                choices=('legacy', 'pecan'),
                help=_("This will choose the web framework in which to run "
                       "the Neutron API server. 'pecan' is a new experimental "
-                      "rewrite of the API server.")),
+                      "rewrite of the API server.")),  # API服务框架
     cfg.IntOpt('global_physnet_mtu', default=constants.DEFAULT_NETWORK_MTU,
                deprecated_name='segment_mtu', deprecated_group='ml2',
                help=_('MTU of the underlying physical network. Neutron uses '
